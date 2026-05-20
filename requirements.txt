@@ -1,6 +1,7 @@
 fastapi
 uvicorn
 joblib
+opencv-python-headless
 opencv-contrib-python-headless
 mediapipe
 pandas
