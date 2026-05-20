@@ -1,10 +1,11 @@
 import os
 
+os.environ["TF_CPP_MIN_LOG_LEVEL"] = "3"
+os.environ["MEDIAPIPE_DISABLE_GPU"] = "1"
+
 # =========================
 # REDUCE TENSORFLOW LOG
 # =========================
-
-os.environ["TF_CPP_MIN_LOG_LEVEL"] = "3"
 
 from fastapi import FastAPI, UploadFile, File
 from fastapi.middleware.cors import CORSMiddleware
@@ -244,7 +245,7 @@ async def predict_video(
 if __name__ == "__main__":
 
     uvicorn.run(
-        app,
-        host="127.0.0.1",
+        "api_smartcare:app",
+        host="0.0.0.0",
         port=8000
     )
